@@ -6,11 +6,11 @@
 [![Material 3](https://img.shields.io/badge/Material_3-0068C8?style=for-the-badge&logo=material-design&logoColor=white)](https://m3.material.io/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
-<a href="https://play.google.com/store/apps/details?id=me.impa.domaintrack"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"></a>
-
 **DomainTrack** is a modern Android application for monitoring domain names and SSL certificates. Track expiration dates, receive timely notifications, and ensure your domains and certificates never expire unexpectedly.
 
 ![DomainTrack Banner](docs/images/banner.png)
+
+<a href="https://play.google.com/store/apps/details?id=me.impa.domaintrack"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"></a>
 
 ---
 
