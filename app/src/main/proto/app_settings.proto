@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_package = "me.impa.domaintrack.core.data.store";
+option java_multiple_files = true;
+
+message AppSettings {
+    optional ThemeMode theme_mode = 1;
+    optional bool amoled_mode = 2;
+    optional bool background_update = 3;
+    optional int32 schedule_time_start = 4;
+    optional int32 schedule_time_end = 5;
+    optional AlertConfig domain_alert_cfg = 6;
+    optional AlertConfig cert_alert_cfg = 7;
+    optional bool notification_enabled = 8;
+}
+
+message AlertConfig {
+    optional int32 red_level = 1;
+    optional int32 yellow_level = 2;
+}
+
+enum ThemeMode {
+    THEME_MODE_AUTO = 0;
+    THEME_MODE_DARK = 1;
+    THEME_MODE_LIGHT = 2;
+
+}

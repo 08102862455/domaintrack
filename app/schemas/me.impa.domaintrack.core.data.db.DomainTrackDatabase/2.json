@@ -1,0 +1,220 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "117587b3e9879c1d62206031ded5eed9",
+    "entities": [
+      {
+        "tableName": "domains",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `domain` TEXT NOT NULL, `creation_date` INTEGER NOT NULL, `expiration_date` INTEGER NOT NULL, `updated_date` INTEGER NOT NULL, `registrar` TEXT NOT NULL, `notes` TEXT NOT NULL, `check_time` INTEGER NOT NULL, `update_state` TEXT NOT NULL DEFAULT 'UPDATED', `no_info` INTEGER NOT NULL DEFAULT 0)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "domain",
+            "columnName": "domain",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "creationDate",
+            "columnName": "creation_date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "expirationDate",
+            "columnName": "expiration_date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedDate",
+            "columnName": "updated_date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "registrar",
+            "columnName": "registrar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "checkTime",
+            "columnName": "check_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updateState",
+            "columnName": "update_state",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'UPDATED'"
+          },
+          {
+            "fieldPath": "noInfo",
+            "columnName": "no_info",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_domains_domain",
+            "unique": true,
+            "columnNames": [
+              "domain"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_domains_domain` ON `${TABLE_NAME}` (`domain`)"
+          }
+        ]
+      },
+      {
+        "tableName": "certificates",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `domain_id` INTEGER NOT NULL, `subdomain` TEXT NOT NULL, `issuer` TEXT NOT NULL, `country` TEXT NOT NULL, `not_before` INTEGER NOT NULL, `not_after` INTEGER NOT NULL, `check_time` INTEGER NOT NULL, `update_state` TEXT NOT NULL DEFAULT 'UPDATED', `no_cert` INTEGER NOT NULL DEFAULT 1, FOREIGN KEY(`domain_id`) REFERENCES `domains`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "domainId",
+            "columnName": "domain_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subdomain",
+            "columnName": "subdomain",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issuer",
+            "columnName": "issuer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notBefore",
+            "columnName": "not_before",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notAfter",
+            "columnName": "not_after",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "checkTime",
+            "columnName": "check_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updateState",
+            "columnName": "update_state",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'UPDATED'"
+          },
+          {
+            "fieldPath": "noCert",
+            "columnName": "no_cert",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_certificates_domain_id",
+            "unique": false,
+            "columnNames": [
+              "domain_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_certificates_domain_id` ON `${TABLE_NAME}` (`domain_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "domains",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "domain_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "rdap_bootstrap",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tld` TEXT NOT NULL, `url` TEXT NOT NULL, PRIMARY KEY(`tld`))",
+        "fields": [
+          {
+            "fieldPath": "tld",
+            "columnName": "tld",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "tld"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '117587b3e9879c1d62206031ded5eed9')"
+    ]
+  }
+}

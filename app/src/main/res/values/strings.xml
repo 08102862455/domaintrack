@@ -1,0 +1,178 @@
+<!--
+  ~ Copyright (c) 2026 Alexander Yaburov
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">DomainTrack</string>
+    <string name="channel_notification_critical_name">Critical alerts</string>
+    <string name="channel_notification_critical_description">Urgent notifications requiring immediate attention (expiring soon, check failures, etc.).</string>"
+    <string name="channel_notification_reminder_name">Reminder alerts</string>
+    <string name="channel_notification_reminder_description">Advance notifications about upcoming expirations and non-critical issues.</string>
+    <plurals name="notification_title">
+        <item quantity="one">%1$s: %2$d alert requiring attention</item>
+        <item quantity="other">%1$s: %2$d alerts requiring attention</item>
+    </plurals>
+    <plurals name="notification_content_title">
+        <item quantity="one">%1$s alert requiring attention</item>
+        <item quantity="other">%1$s alerts requiring attention</item>
+    </plurals>
+    <plurals name="notification_text_domain_expiration">
+        <item quantity="one">• %1$s — %2$d day left</item>
+        <item quantity="other">• %1$s — %2$d days left</item>
+    </plurals>
+    <plurals name="notification_text_cert_expiration">
+        <item quantity="one">• SSL %1$s — %2$d day left</item>
+        <item quantity="other">• SSL %1$s — %2$d days left</item>
+    </plurals>
+    <string name="notification_text_check_error">• %s — check failed</string>
+    <string name="notification_text_more">(+%d more)</string>
+    <plurals name="notification_text_critical_count">
+        <item quantity="one">%d critical alert</item>
+        <item quantity="other">%d critical alerts</item>
+    </plurals>
+    <plurals name="notification_text_reminder_count">
+        <item quantity="one">%d reminder</item>
+        <item quantity="other">%d reminders</item>
+    </plurals>
+    <string name="action_domains">Domains</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <plurals name="text_days_format">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="text_days">
+        <item quantity="one">day</item>
+        <item quantity="other">days</item>
+    </plurals>
+    <string name="text_until_expiration">until expiration</string>
+    <string name="text_expires_on">Expires on %s</string>
+    <string name="text_registrar">Registrar</string>
+    <string name="text_creation_date">Creation Date</string>
+    <string name="text_updated_date">Updated Date</string>
+    <string name="text_expiration_date">Expiration Date</string>
+    <string name="text_days_left">Days Left</string>
+    <string name="title_my_domains">My Domains</string>
+    <string name="title_delete_domain">Delete Domain</string>
+    <string name="action_delete">Delete</string>
+    <string name="text_delete_domain_confirm">Are you sure you want to delete «%1$s»?</string>
+    <string name="text_ssl">SSL</string>
+    <string name="text_issuer">Issuer</string>
+    <string name="text_expiry">Expiry</string>
+    <string name="text_ssl_inactive">INACTIVE</string>
+    <string name="text_appearance">Appearance</string>
+    <string name="text_theme">Theme</string>
+    <string name="text_system">System</string>
+    <string name="text_light">Light</string>
+    <string name="text_dark">Dark</string>
+    <string name="text_auto">Auto</string>
+    <string name="text_oled_dark_mode">OLED Dark Mode</string>
+    <string name="text_oled_dark_mode_summary">Uses true black for dark theme to save power on OLED/AMOLED displays</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="text_monitoring">Background Monitoring</string>
+    <string name="text_monitoring_enabled">Enable Monitoring</string>
+    <string name="text_monitoring_enabled_summary">Automatically check domain and certificate expiration in the background</string>
+    <string name="text_schedule">Schedule Setting</string>
+    <string name="text_schedule_format">%1$s ~ %2$s</string>
+    <string name="text_schedule_format_next_day">%1$s ~ %2$s next day</string>
+    <string name="text_next_run">Next run: %s</string>
+    <string name="text_not_scheduled">Not scheduled</string>
+    <plurals name="text_days_remaining">
+        <item quantity="one">%d day remaining</item>
+        <item quantity="other">%d days remaining</item>
+    </plurals>
+    <plurals name="text_notification_domain">
+        <item quantity="one">Domain registration expires on %1$s. %2$d day left.</item>
+        <item quantity="other">Domain registration expires on %1$s. %2$d days left.</item>
+    </plurals>
+    <plurals name="text_notification_cert">
+        <item quantity="one">SSL Certificate expires on %1$s. %2$d day left.</item>
+        <item quantity="other">SSL Certificate expires on %1$s. %2$d days left.</item>
+    </plurals>
+    <plurals name="text_threshold_days">
+        <item quantity="one">Notify when %d day remaining</item>
+        <item quantity="other">Notify when %d days remaining</item>
+    </plurals>
+    <string name="text_notification_domain_overline">Domain</string>
+    <string name="text_notification_cert_overline">Certificate</string>
+    <string name="text_notification_domain_not_found">Domain not found. Please verify the name or remove it from monitoring.</string>
+    <string name="text_notification_cert_not_found">No SSL certificate found. This domain may not support HTTPS.</string>
+    <string name="title_navigation_settings">Settings</string>
+    <string name="title_navigation_domains">Domains</string>
+    <string name="title_navigation_alerts">Alerts</string>
+    <string name="text_notification_red_alerts">Action Required</string>
+    <string name="text_notification_yellow_alerts">Notice</string>
+    <string name="text_search">Search domains…</string>
+    <string name="text_sort_name">Name</string>
+    <string name="text_sort_days_left">Days Left</string>
+    <string name="text_sort_expiration_date">Expiration Date</string>
+    <string name="text_alert_rules">Alert Rules</string>
+    <string name="text_critical_alerts">Critical Alerts</string>
+    <string name="text_domain_critical_alerts">Domain Critical Alerts</string>
+    <string name="text_domain_reminder_alerts">Domain Early Reminders</string>
+    <string name="text_cert_critical_alerts">SSL Critical Alerts</string>
+    <string name="text_cert_reminder_alerts">SSL Early Reminders</string>
+    <string name="text_alert_preferences">Alert Preferences</string>
+    <string name="text_receive_notifications">Receive Notifications</string>
+    <string name="text_receive_notifications_summary">Get notified about domain and certificate expiration</string>
+    <string name="text_system_notification_settings">System Notification Settings</string>
+    <string name="text_system_notification_settings_summary">Manage sound, vibration, and priority</string>
+    <string name="text_alert_rules_settings">Alert Rules</string>
+    <string name="text_alert_rules_settings_summary">Configure critical and reminder thresholds</string>
+    <string name="text_battery_optimization_title">Battery Optimization</string>
+    <string name="text_battery_optimization_description">DomainTrack uses background tasks to check your domains once a day. Some device manufacturers implement aggressive battery saving that may block our background work. To ensure reliable monitoring, please disable battery optimization for DomainTrack.</string>
+    <string name="text_battery_optimization_already_disabled">✓ Battery optimization is already disabled for DomainTrack</string>
+    <string name="text_battery_optimization_open_settings">Manage in Settings</string>
+    <string name="text_battery_optimization_item_why_title">Why is this needed?</string>
+    <string name="text_battery_optimization_item_why_description">Some Android manufacturers (Xiaomi, Huawei, Samsung, etc.) add aggressive power saving that can stop background tasks from running.</string>
+    <string name="text_battery_optimization_item_what_title">What does it do?</string>
+    <string name="text_battery_optimization_item_what_description">Disabling battery optimization allows DomainTrack to run daily checks even when the app is not actively used.</string>
+    <string name="text_battery_optimization_item_how_title">How to disable?</string>
+    <string name="text_battery_optimization_item_how_description">Tap the button below and select «Unrestricted» or «Don\'t optimize» for DomainTrack in system settings.</string>
+    <string name="text_battery_optimization_status_enabled">Optimization enabled</string>
+    <string name="text_battery_optimization_status_disabled">Optimization disabled</string>
+    <string name="title_domain_details">Domain Details</string>
+    <string name="text_expiration_date_unknown">Expiration date unknown</string>
+    <string name="text_expiration_date_unknown_info">Some domain registrars do not provide registration expiration dates. For such domains, expiration tracking is unavailable.</string>
+    <string name="text_information_not_available">Information not available</string>
+    <string name="text_no_info_disclaimer">Due to WHOIS protocol limitations, not all domain registrars are supported. If you encountered this issue, please report it to the developer.</string>
+    <string name="text_report_issue">Report Issue</string>
+    <string name="title_add_domain">Add Domain</string>
+    <string name="title_edit_domain">Edit Domain</string>
+    <string name="text_enter_domain_to_monitor">Enter domain to monitor</string>
+    <string name="text_example_com">example.com</string>
+    <string name="text_domain_name">Domain name</string>
+    <string name="text_no_domains">No domains yet</string>
+    <string name="text_add_domain_prompt">Add a domain to track its certificate and expiration</string>
+    <string name="text_no_results">No results found</string>
+    <string name="text_no_results_prompt">Try a different search term or clear the search filter</string>
+    <string name="text_all_clear">All clear!</string>
+    <string name="text_no_upcoming_expirations">No upcoming expirations. We\'ll notify you when it\'s time.</string>
+    <string name="title_about">About</string>
+    <string name="text_version">Version</string>
+    <string name="text_privacy_policy">Privacy Policy</string>
+    <string name="text_privacy_policy_summary">Read our privacy policy</string>
+    <string name="text_rate_app">Rate App</string>
+    <string name="text_rate_app_summary">Support us with your review</string>
+    <string name="text_source_code">Source Code</string>
+    <string name="text_source_code_summary">View project source code</string>
+    <string name="text_no_connection">No internet connection available</string>
+    <string name="title_onboarding">Background Monitoring</string>
+    <string name="text_onboarding_description">DomainTrack can monitor your domains and certificates in the background and send you notifications about expirations. This feature is disabled by default. To enable it, go to Settings and turn on Background Monitoring and notifications if needed.</string>
+    <string name="text_onboarding_button">Go to Settings</string>
+    <string name="text_search_domains">Search domains</string>
+    <string name="text_search_no_results">No results for «%s»</string>
+</resources>
