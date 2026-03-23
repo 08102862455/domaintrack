@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package me.impa.domaintrack.core.presentation.navigation
+package me.impa.domaintrack.core.presentation.util
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloat

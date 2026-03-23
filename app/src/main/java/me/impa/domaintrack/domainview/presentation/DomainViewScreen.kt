@@ -73,11 +73,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import me.impa.domaintrack.R
-import me.impa.domaintrack.core.presentation.navigation.shimmer
 import me.impa.domaintrack.core.presentation.state.AlertLevel
 import me.impa.domaintrack.core.presentation.state.CertificateInfoState
 import me.impa.domaintrack.core.presentation.state.DomainInfoState
 import me.impa.domaintrack.core.presentation.state.ExpiryInfo
+import me.impa.domaintrack.core.presentation.util.shimmer
 import me.impa.domaintrack.domainview.presentation.state.DomainViewAction
 import me.impa.domaintrack.ui.theme.DomainTrackTheme
 import me.impa.domaintrack.ui.theme.LocalExtendedColorScheme

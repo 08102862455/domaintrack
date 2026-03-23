@@ -28,7 +28,7 @@ plugins {
 }
 
 val productVersion = 1
-val releaseVersion = 4
+val releaseVersion = 5
 
 android {
     namespace = "me.impa.domaintrack"
@@ -43,7 +43,7 @@ android {
         minSdk = 24
         targetSdk = 36
         versionCode = requireNotNull(targetSdk) * 1_000_00_00 + productVersion * 1_00_00 + releaseVersion * 1_00
-        versionName = "1.0.0"
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

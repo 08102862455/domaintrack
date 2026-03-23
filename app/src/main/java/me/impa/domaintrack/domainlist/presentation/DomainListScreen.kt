@@ -101,11 +101,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import kotlinx.coroutines.launch
 import me.impa.domaintrack.R
-import me.impa.domaintrack.core.presentation.navigation.shimmer
 import me.impa.domaintrack.core.presentation.state.AlertLevel
 import me.impa.domaintrack.core.presentation.state.CertificateInfoState
 import me.impa.domaintrack.core.presentation.state.DomainInfoState
 import me.impa.domaintrack.core.presentation.state.ExpiryInfo
+import me.impa.domaintrack.core.presentation.util.shimmer
 import me.impa.domaintrack.core.util.isCompact
 import me.impa.domaintrack.core.util.isScrollingUp
 import me.impa.domaintrack.domainlist.presentation.state.DomainListAction
@@ -457,29 +457,35 @@ private fun ColumnScope.DomainSearchList(
 
 @Composable
 private fun ColumnScope.DomainSearchEmptyResult(query: String) {
+    Spacer(modifier = Modifier.height(32.dp))
     Icon(
         painterResource(R.drawable.outline_question_mark_icon),
         contentDescription = null,
         tint = MaterialTheme.colorScheme.onSurfaceVariant,
         modifier = Modifier
+            .fillMaxWidth()
             .padding(16.dp)
             .size(32.dp)
             .align(Alignment.CenterHorizontally)
     )
     Text(stringResource(R.string.text_search_no_results, query),
         style = MaterialTheme.typography.bodyLarge,
+        textAlign = TextAlign.Center,
         modifier = Modifier
-            .padding(vertical = 16.dp)
-            .align(Alignment.CenterHorizontally))
+            .fillMaxWidth()
+            .padding(vertical = 16.dp))
+    Spacer(modifier = Modifier.height(32.dp))
 }
 
 @Composable
 private fun ColumnScope.DomainSearchEmptyQuery() {
+    Spacer(modifier = Modifier.height(32.dp))
     Icon(
         painterResource(R.drawable.outline_search_icon),
         contentDescription = null,
         tint = MaterialTheme.colorScheme.onSurfaceVariant,
         modifier = Modifier
+            .fillMaxWidth()
             .padding(vertical = 16.dp)
             .size(32.dp)
             .align(Alignment.CenterHorizontally)
@@ -487,10 +493,12 @@ private fun ColumnScope.DomainSearchEmptyQuery() {
     Text(
         text = stringResource(R.string.text_search_domains),
         style = MaterialTheme.typography.titleLarge,
+        textAlign = TextAlign.Center,
         modifier = Modifier
+            .fillMaxWidth()
             .padding(vertical = 16.dp)
-            .align(Alignment.CenterHorizontally)
     )
+    Spacer(modifier = Modifier.height(32.dp))
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

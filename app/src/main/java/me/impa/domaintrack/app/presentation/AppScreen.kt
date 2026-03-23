@@ -36,7 +36,6 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Badge
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -57,15 +56,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.scene.DialogSceneStrategy
 import androidx.navigation3.ui.NavDisplay
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.flow
 import me.impa.domaintrack.R
 import me.impa.domaintrack.core.domain.model.AppThemeMode
 import me.impa.domaintrack.core.presentation.navigation.BottomSheetSceneStrategy
@@ -73,7 +69,6 @@ import me.impa.domaintrack.core.presentation.navigation.Route
 import me.impa.domaintrack.core.presentation.navigation.toEntries
 import me.impa.domaintrack.core.presentation.state.AppMessage
 import me.impa.domaintrack.ui.theme.DomainTrackTheme
-import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
 fun AppScreen(viewModel: AppViewModel = hiltViewModel()) {
